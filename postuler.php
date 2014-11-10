@@ -160,28 +160,28 @@
                             <div class="form-group">
                                 <label for="textArea" class="col-lg-2 control-label">Depuis combien de temps tu joues ?</label>
                                 <div class="col-lg-10">
-                                    <textarea class="form-control" rows="3" id="textArea"></textarea>
+                                    <textarea class="form-control" rows="3" id="textArea" name="histoire"></textarea>
                                     <span class="help-block">Tu peux raconter ta life.</span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="textArea" class="col-lg-2 control-label">Ton parcours</label>
                                 <div class="col-lg-10">
-                                    <textarea class="form-control" rows="3" id="textArea"></textarea>
+                                    <textarea class="form-control" rows="3" id="textArea" name="parcours"></textarea>
                                     <span class="help-block">Tes down, tes plus grandes réussites, tes passages à vide.</span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="textArea" class="col-lg-2 control-label">Optimisation</label>
                                 <div class="col-lg-10">
-                                    <textarea class="form-control" rows="3" id="textArea"></textarea>
+                                    <textarea class="form-control" rows="3" id="textArea" name="optimisation"></textarea>
                                     <span class="help-block">Une fois niveau 100, comment comptes-tu t'optimiser et que vas-tu privilégié ?</span>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <label for="textArea" class="col-lg-2 control-label">Et nous?</label>
                                 <div class="col-lg-10">
-                                    <textarea class="form-control" rows="3" id="textArea"></textarea>
+                                    <textarea class="form-control" rows="3" id="textArea" name="contribution"></textarea>
                                     <span class="help-block">Tu nous apportes quoi?</span>
                                 </div>
                             </div>
