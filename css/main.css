@@ -1,0 +1,13 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+#bodybg {
+    background: url('../img/bg.jpg');
+    background-size: 180px;
+}
+
+#bodycontent {
+    min-height:850px;
+}
