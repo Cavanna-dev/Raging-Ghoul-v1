@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Lorem Ipsum</title>
+        <title>Raging Ghoul</title>
         <link rel="stylesheet" href="http://bootswatch.com/darkly/bootstrap.min.css" type="text/css" media="screen" />
         <link rel="stylesheet" href="./css/main.css" type="text/css" />
     </head>
@@ -57,7 +57,7 @@
                             <div class="form-group">
                                 <label for="situation" class="col-lg-2 control-label">Situation Professionel</label>
                                 <div class="col-lg-10">
-                                    <select class="form-control" id="situation">
+                                    <select class="form-control" id="situation" name="situation">
                                         <option>Chomage</option>
                                         <option>Etudiant</option>
                                         <option>Salarié</option>
@@ -87,7 +87,7 @@
                             <div class="form-group">
                                 <label for="classe" class="col-lg-2 control-label">Classe</label>
                                 <div class="col-lg-10">
-                                    <select class="form-control" id="situation">
+                                    <select class="form-control" id="classe" name="classe">
                                         <option>Guerrier</option>
                                         <option>Chevalier de la Mort</option>
                                         <option>Druide</option>

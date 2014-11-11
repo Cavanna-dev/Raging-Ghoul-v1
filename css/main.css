@@ -3,6 +3,9 @@
     padding:0;
 }
 
+body {
+    height:100%;
+}
 #bodybg {
     background: url('../img/bg.jpg');
     background-size: 180px;
