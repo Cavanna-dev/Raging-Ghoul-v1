@@ -118,6 +118,7 @@
                                 <label for="metier1" class="col-lg-2 control-label">Métier 1 + Niveau Métier</label>
                                 <div class="col-lg-5">
                                     <select class="form-control col-lg-2" id="metier1" name="metier1">
+                                        <option>Autre</option>
                                         <option>Alchimie</option>
                                         <option>Calligraphie</option>
                                         <option>Couture</option>
@@ -139,6 +140,7 @@
                                 <label for="metier2" class="col-lg-2 control-label">Métier 2 + Niveau Métier</label>
                                 <div class="col-lg-5">
                                     <select class="form-control" id="metier2" name="metier2">
+                                        <option>Autre</option>
                                         <option>Alchimie</option>
                                         <option>Calligraphie</option>
                                         <option>Couture</option>

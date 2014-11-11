@@ -1,7 +1,5 @@
 <?php
 
-include './bdd.php';
-
 $nom         = htmlspecialchars($_POST['nom']);
 $prenom      = htmlspecialchars($_POST['prenom']);
 $age         = htmlspecialchars($_POST['age']);
@@ -22,11 +20,9 @@ $optimisation = htmlspecialchars($_POST['optimisation']);
 $contribution = htmlspecialchars($_POST['contribution']);
 
 try {
-    $dbname = "raging-ghoul-v1";
-    $user = "root";
-    $pass = "";
-
-    $db = new PDO('mysql:host=localhost;dbname=' . $dbname, $user, $pass);
+    
+    include_once './connectionDb.php';
+    
     $db->exec("INSERT INTO candidature(id, nom, prenom, age, situation, pseudo, armurerie, "
             . "race, classe, specialisation_p, specialisation_s, metier1, metier1_niv, metier2, metier2_niv, "
             . "histoire, parcours, optimisation, contribution) "
@@ -40,5 +36,4 @@ try {
     
 } catch (PDOException $e) {
     echo 'Échec lors de la connexion : ' . $e->getMessage();
-    header('location:error.php');
 }

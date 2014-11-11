@@ -24,63 +24,61 @@
                 <div id="bodycontent" class="jumbotron">
                     <h1>Liste des Noobs : </h1>
                     <?php
-                    $dbname = "raging-ghoul-v1";
-                    $user = "root";
-                    $pass = "";
-
-                    $db = new PDO('mysql:host=localhost;dbname=' . $dbname, $user, $pass);
                     
+                    include_once '../connectionDb.php';
+
                     $resultats = $db->query("SELECT nom, prenom, pseudo, classe, armurerie FROM candidature");
                     $resultats->setFetchMode(PDO::FETCH_OBJ);
                     while ($resultat = $resultats->fetch()) {
-                        switch($resultat->classe) {
-                            case 'Mage' : 
+                        switch ($resultat->classe)
+                        {
+                            case 'Mage' :
                                 $color = "rgb(0, 233, 255)";
-                                $logo  = "mage_logo.png";
+                                $logo = "mage_logo.png";
                                 break;
-                            case 'Chevalier de la Mort' : 
+                            case 'Chevalier de la Mort' :
                                 $color = "rgb(214, 17, 17)";
-                                $logo  = "dk_logo.png";
+                                $logo = "dk_logo.png";
                                 break;
-                            case 'Guerrier' : 
+                            case 'Guerrier' :
                                 $color = "rgb(186, 118, 67)";
-                                $logo  = "war_logo.png";
+                                $logo = "war_logo.png";
                                 break;
-                            case 'Druide' : 
+                            case 'Druide' :
                                 $color = "rgb(244, 160, 34)";
-                                $logo  = "drood_logo.png";
+                                $logo = "drood_logo.png";
                                 break;
-                            case 'Chasseur' : 
+                            case 'Chasseur' :
                                 $color = "rgb(74, 193, 38)";
-                                $logo  = "hunt_logo.png";
+                                $logo = "hunt_logo.png";
                                 break;
-                            case 'Moine' : 
+                            case 'Moine' :
                                 $color = "rgb(179, 229, 221)";
-                                $logo  = "moine_logo.jpg";
+                                $logo = "moine_logo.jpg";
                                 break;
-                            case 'Paladin' : 
+                            case 'Paladin' :
                                 $color = "rgb(255, 193, 231)";
-                                $logo  = "pal_logo.png";
+                                $logo = "pal_logo.png";
                                 break;
-                            case 'Prêtre' : 
+                            case 'Prêtre' :
                                 $color = "rgb(242, 242, 242)";
-                                $logo  = "priest_logo.png";
+                                $logo = "priest_logo.png";
                                 break;
-                            case 'Voleur' : 
+                            case 'Voleur' :
                                 $color = "rgb(255, 245, 61)";
-                                $logo  = "fufu_logo.png";
+                                $logo = "fufu_logo.png";
                                 break;
-                            case 'Chaman' : 
+                            case 'Chaman' :
                                 $color = "rgb(80, 144, 229)";
-                                $logo  = "cham_logo.png";
+                                $logo = "cham_logo.png";
                                 break;
-                            case 'Démoniste' : 
+                            case 'Démoniste' :
                                 $color = "rgb(247, 86, 239)";
-                                $logo  = "warlock_logo.png";
+                                $logo = "warlock_logo.png";
                                 break;
                         }
-                        
-                        echo '<div style="padding:7px 5px;"><img style="width:20px;height:20px;" src="../img/classes/'.$logo.'"/><a href="' . $resultat->armurerie . '" target="_blank" style="margin-left:5px;color:' . $color . ';">';
+
+                        echo '<div style="padding:7px 5px;"><img style="width:20px;height:20px;" src="../img/classes/' . $logo . '"/><a href="' . $resultat->armurerie . '" target="_blank" style="margin-left:5px;color:' . $color . ';">';
                         echo $resultat->nom . ' ' . $resultat->prenom . ' : ' . $resultat->pseudo;
                         echo '</a></div><br>';
                     }

@@ -1,4 +1,0 @@
-AuthName "Page d'administration protégée"
-AuthType Basic
-AuthUserFile "E:\wamp\www\Raging-Ghoul-v1\admin\pass.txt"
-Require valid-user
