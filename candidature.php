@@ -32,7 +32,16 @@ try {
     
     header('location:success.php');
     
-    mail('cavannachristophe@gmail.com', 'test', 'nouvelle candidature');
+    $content  = "Bonjour, " . PHP_EOL;
+    $content .= "Une nouvelle candidature est disponible sur http://www.rg-guild.eu/admin. " . PHP_EOL;
+    $content .= "Pseudo : " . $pseudo . PHP_EOL;
+    $content .= "Lien Armurerie : " . $armu . PHP_EOL;
+    $content .= "Description : " . $histoire . PHP_EOL;
+    $content .= "Cordialement, ";
+    
+    mail('cavannachristophe@gmail.com', 'Nouvelle Candidature:' . $classe, $content);
+    mail('swoka@rg-guild.eu', 'Nouvelle Candidature:' . $classe, $content);
+    mail('neryl@rg-guild.eu', 'Nouvelle Candidature:' . $classe, $content);
     
 } catch (PDOException $e) {
     echo 'Échec lors de la connexion : ' . $e->getMessage();
