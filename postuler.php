@@ -82,22 +82,22 @@
                                 <div class="col-lg-10">
                                     <input type="text" class="form-control" id="race" name="race" placeholder="Ta Race">
                                 </div>
-                            </div>  
+                            </div>
                             <div class="form-group">
                                 <label for="classe" class="col-lg-2 control-label">Classe</label>
                                 <div class="col-lg-10">
-                                    <select class="form-control" id="classe" name="classe">
-                                        <option>Guerrier</option>
-                                        <option>Chevalier de la Mort</option>
-                                        <option>Druide</option>
-                                        <option>Chasseur</option>
-                                        <option>Mage</option>
-                                        <option>Moine</option>
-                                        <option>Paladin</option>
-                                        <option>Prêtre</option>
-                                        <option>Voleur</option>
-                                        <option>Chaman</option>
-                                        <option>Démoniste</option>
+                                    <select class="form-control" id="classe" name="classe">  
+                                        <?php
+                                        //Traitement pour récupérer les différentes classes
+                                        include_once './connectionDb.php';
+
+                                        $resultats = $db->query("SELECT name "
+                                                . "FROM classes ");
+                                        $resultats->setFetchMode(PDO::FETCH_OBJ);
+                                        while ($resultat = $resultats->fetch()) {
+                                            echo "<option>" . utf8_encode($resultat->name) . "</option>";
+                                        }
+                                        ?>
                                     </select>
                                 </div>
                             </div>
