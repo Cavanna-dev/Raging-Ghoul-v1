@@ -39,7 +39,7 @@ try {
     $content .= "Description : " . $histoire . PHP_EOL;
     $content .= "Cordialement, ";
     
-    mail('cavannachristophe@gmail.com', 'Nouvelle Candidature:' . $classe, $content);
+    mail('keurbycandy@rg-guild.eu', 'Nouvelle Candidature:' . $classe, $content);
     mail('swoka@rg-guild.eu', 'Nouvelle Candidature:' . $classe, $content);
     mail('neryl@rg-guild.eu', 'Nouvelle Candidature:' . $classe, $content);
     
