@@ -15,12 +15,11 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="#">Brand</a>
+                    <a class="navbar-brand" href="#">Raging Ghoul</a>
                 </div>
                 <div class="navbar-collapse collapse navbar-responsive-collapse">
                     <ul class="nav navbar-nav">
                         <li><a href="./index.php">Accueil</a></li>
-                        <li><a href="#">Qui sommes-nous</a></li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
                         <li class="active"><a href="./postuler.php">Postuler</a></li>
