@@ -25,10 +25,10 @@ else {
                     </div>
                     <div class="navbar-collapse collapse navbar-responsive-collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active"><a href="./candidatures.php">Les Candidatures</a></li>
+                            <li><a href="./candidatures.php">Les Candidatures</a></li>
                         </ul>
                         <ul class="nav navbar-nav">
-                            <li><a href="./classes.php">Gérer les classes</a></li>
+                            <li class="active"><a href="./classes.php">Gérer les classes</a></li>
                         </ul>
                     </div>
                 </div>
@@ -36,33 +36,29 @@ else {
             <div id="bodybg">
                 <div class="container">
                     <div id="bodycontent" class="jumbotron">
-                        <h1>Liste des Noobs : </h1>
+                        <h1>Liste des Classes : </h1>
                         <table class="table table-striped table-hover ">
                             <thead>
                                 <tr>
                                     <th>#</th>
                                     <th>Classe</th>
-                                    <th>Nom - Prenom : Pseudo</th>
-                                    <th>Action</th>
+                                    <th>Logo</th>
+                                    <th>Couleur</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
                                 include_once '../connectionDb.php';
 
-                                $resultats = $db->query("SELECT cand.*, class.color, class.logo "
-                                        . "FROM candidature cand "
-                                        . "LEFT JOIN classes class ON cand.classe = class.id ");
+                                $resultats = $db->query("SELECT * "
+                                                      . "FROM classes ");
                                 $resultats->setFetchMode(PDO::FETCH_OBJ);
-                                $nbCandidats = 1;
                                 while ($resultat = $resultats->fetch()) {
                                     echo '<tr style="color:' . $resultat->color . '">';
-                                    echo '<td>' . $nbCandidats . '</td>';
+                                    echo '<td>' . utf8_encode($resultat->name) . '</td>';
                                     echo '<td><img style="width:20px;height:20px;" src="../img/classes/' . $resultat->logo . '"/></td>';
-                                    echo '<td><a href="' . $resultat->armurerie . '" target="_blank" style="color:' . $resultat->color . '">' . $resultat->nom . ' ' . $resultat->prenom . ' : ' . $resultat->pseudo . '</a></td>';
-                                    echo '<td><a href="./function_delete.php?id=' . $resultat->id . '" onclick="return confirm("Sur?")"><img style="width:20px;height:20px;" src="../img/rmv.png"/></a></td>';
-                                    echo '</tr>';
-                                    $nbCandidats++;
+                                    echo '<td>' . $resultat->color . '</td>';
+                                    echo '<tr>';
                                 }
                                 $resultats->closeCursor();
                                 ?>

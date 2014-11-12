@@ -9,6 +9,5 @@ try {
     header('location:candidatures.php');
 } catch (PDOException $e) {
     header('location:error.php');
-    
 }
 ?>
