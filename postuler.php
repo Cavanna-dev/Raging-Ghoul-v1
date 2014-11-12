@@ -91,11 +91,11 @@
                                         //Traitement pour récupérer les différentes classes
                                         include_once './connectionDb.php';
 
-                                        $resultats = $db->query("SELECT name "
+                                        $resultats = $db->query("SELECT id, name "
                                                 . "FROM classes ");
                                         $resultats->setFetchMode(PDO::FETCH_OBJ);
                                         while ($resultat = $resultats->fetch()) {
-                                            echo "<option>" . utf8_encode($resultat->name) . "</option>";
+                                            echo '<option value="'. $resultat->id .'">' . utf8_encode($resultat->name) . '</option>';
                                         }
                                         ?>
                                     </select>

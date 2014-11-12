@@ -32,59 +32,13 @@ else {
                     
                     include_once '../connectionDb.php';
 
-                    $resultats = $db->query("SELECT nom, prenom, pseudo, classe, armurerie "
-                                          . "FROM candidature");
+                    $resultats = $db->query("SELECT cand.*, class.color, class.logo "
+                                          . "FROM candidature cand "
+                                          . "LEFT JOIN classes class ON cand.classe = class.id ");
                     $resultats->setFetchMode(PDO::FETCH_OBJ);
                     while ($resultat = $resultats->fetch()) {
-                        switch ($resultat->classe)
-                        {
-                            case 'Mage' :
-                                $color = "rgb(0, 233, 255)";
-                                $logo = "mage_logo.png";
-                                break;
-                            case 'Chevalier de la Mort' :
-                                $color = "rgb(214, 17, 17)";
-                                $logo = "dk_logo.png";
-                                break;
-                            case 'Guerrier' :
-                                $color = "rgb(186, 118, 67)";
-                                $logo = "war_logo.png";
-                                break;
-                            case 'Druide' :
-                                $color = "rgb(244, 160, 34)";
-                                $logo = "drood_logo.png";
-                                break;
-                            case 'Chasseur' :
-                                $color = "rgb(74, 193, 38)";
-                                $logo = "hunt_logo.png";
-                                break;
-                            case 'Moine' :
-                                $color = "rgb(179, 229, 221)";
-                                $logo = "moine_logo.jpg";
-                                break;
-                            case 'Paladin' :
-                                $color = "rgb(255, 193, 231)";
-                                $logo = "pal_logo.png";
-                                break;
-                            case 'Prêtre' :
-                                $color = "rgb(242, 242, 242)";
-                                $logo = "priest_logo.png";
-                                break;
-                            case 'Voleur' :
-                                $color = "rgb(255, 245, 61)";
-                                $logo = "fufu_logo.png";
-                                break;
-                            case 'Chaman' :
-                                $color = "rgb(80, 144, 229)";
-                                $logo = "cham_logo.png";
-                                break;
-                            case 'Démoniste' :
-                                $color = "rgb(247, 86, 239)";
-                                $logo = "warlock_logo.png";
-                                break;
-                        }
-
-                        echo '<div style="padding:7px 5px;"><img style="width:20px;height:20px;" src="../img/classes/' . $logo . '"/><a href="' . $resultat->armurerie . '" target="_blank" style="margin-left:5px;color:' . $color . ';">';
+                        echo '<div style="padding:2px 5px;"><img style="width:20px;height:20px;" src="../img/classes/' . $resultat->logo . '"/>'
+                                . '<a href="' . $resultat->armurerie . '" target="_blank" style="margin-left:5px;color:' . $resultat->color . ';">';
                         echo $resultat->nom . ' ' . $resultat->prenom . ' : ' . $resultat->pseudo;
                         echo '</a></div><br>';
                     }
