@@ -23,7 +23,6 @@ try {
     }else
         header('location:error.php');
 
-    mail('cavannachristophe@gmail.com', 'test', 'nouvelle candidature');
 } catch (PDOException $e) {
     echo 'Échec lors de la connexion : ' . $e->getMessage();
 }
