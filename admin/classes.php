@@ -40,10 +40,10 @@ else {
                         <table class="table table-striped table-hover ">
                             <thead>
                                 <tr>
-                                    <th>#</th>
                                     <th>Classe</th>
                                     <th>Logo</th>
                                     <th>Couleur</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -51,17 +51,19 @@ else {
                                 include_once '../connectionDb.php';
 
                                 $resultats = $db->query("SELECT * "
-                                                      . "FROM classes ");
+                                        . "FROM classes ");
                                 $resultats->setFetchMode(PDO::FETCH_OBJ);
                                 while ($resultat = $resultats->fetch()) {
                                     echo '<tr style="color:' . $resultat->color . '">';
                                     echo '<td>' . utf8_encode($resultat->name) . '</td>';
                                     echo '<td><img style="width:20px;height:20px;" src="../img/classes/' . $resultat->logo . '"/></td>';
                                     echo '<td>' . $resultat->color . '</td>';
+                                    echo '<td><a href="#">Modifier</a></td>';
                                     echo '<tr>';
                                 }
                                 $resultats->closeCursor();
                                 ?>
+                            <div id="colorSelector"><div style="background-color: rgb(92, 92, 168);"></div></div>
                             </tbody>
                         </table>
                     </div>
