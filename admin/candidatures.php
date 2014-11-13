@@ -60,7 +60,7 @@ else {
                                     echo '<td>' . $nbCandidats . '</td>';
                                     echo '<td><img style="width:20px;height:20px;" src="../img/classes/' . $resultat->logo . '"/></td>';
                                     echo '<td><a href="' . $resultat->armurerie . '" target="_blank" style="color:' . $resultat->color . '">' . $resultat->nom . ' ' . $resultat->prenom . ' : ' . $resultat->pseudo . '</a></td>';
-                                    echo '<td><a href="./function_delete.php?id=' . $resultat->id . '" onclick="return confirm("Sur?")"><img style="width:20px;height:20px;" src="../img/rmv.png"/></a></td>';
+                                    echo '<td><a href="./function_delete.php?id=' . $resultat->id . '" onclick="return confirm(\'Etes-vous sur de vouloir supprimer la candidature de '.$resultat->pseudo.'?\')"><img style="width:20px;height:20px;" src="../img/rmv.png"/></a></td>';
                                     echo '</tr>';
                                     $nbCandidats++;
                                 }
