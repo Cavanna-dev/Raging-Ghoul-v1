@@ -9,6 +9,7 @@ body {
 
 #megaBan {
     height: 250px;
+    z-index: 999999;
 }
 #bodybg {
     background-size: 180px;
