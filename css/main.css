@@ -6,10 +6,27 @@
 body {
     height:100%;
 }
+
+#megaBan {
+    height: 250px;
+}
 #bodybg {
     background-size: 180px;
 }
 
-#bodycontent {
-    min-height:850px;
+.recruitImg {
+    width:25px;
+    height:25px;
+
+    border: 2px solid black;
+
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+}
+
+.desactivatedRecruit{
+    -webkit-filter: grayscale(100%);
+    -moz-filter: grayscale(100%);
+    filter: grayscale(100%);
 }
