@@ -8,10 +8,10 @@
         <link rel="stylesheet" href="./css/main.css" type="text/css" />
     </head>
     <body>
-        <div id="megaBan"></div>
         <div id="bodybg">
             <div  class="container">
                 <?php include 'menu.php'; ?>
+            <div id="megaBan"></div>
             </div>
             <div class="container">
                 <div class="row-fluid">

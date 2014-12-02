@@ -5,11 +5,14 @@
 
 body {
     height:100%;
+    background-image: url(../img/background.jpg);
+    
 }
 
 #megaBan {
     height: 250px;
-    z-index: 999999;
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
 }
 #bodybg {
     background-size: 180px;
