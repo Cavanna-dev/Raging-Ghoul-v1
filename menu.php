@@ -2,8 +2,8 @@
     //Début Traitement du menu
 
     $menuLeft = array(
-        'Accueil' => 'index.php',
-        'Forum' => '#',
+        'Accueil' => './index.php',
+        'Forum' => './forum/',
         'Roster' => '#',
         'Vidéo' => '#',
     );
@@ -20,8 +20,8 @@
     <div class="navbar-collapse collapse navbar-responsive-collapse">
         <ul class="nav navbar-nav">
             <?php foreach($menuLeft as $elementNameMenu => $elementUrlMenu) { ?>
-            <li class="<?php if(str_replace("/", "", $_SERVER['SCRIPT_NAME']) == $elementUrlMenu) echo "active"; ?>">
-                <a href="/<?php echo $elementUrlMenu; ?>"><?php echo $elementNameMenu; ?></a>
+            <li class="<?php if(str_replace("/", "", $_SERVER['SERVER_NAME']) == $elementUrlMenu) echo "active"; ?>">
+                <a href="<?php echo $elementUrlMenu; ?>"><?php echo $elementNameMenu; ?></a>
             </li>
             <?php } ?>
         </ul>

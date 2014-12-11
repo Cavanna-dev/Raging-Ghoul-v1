@@ -9,6 +9,7 @@
             $pass = '';
             break;
         case 'www.rg-guild.eu':
+        case 'rg-guild.eu':
             $host = 'rgv1.sql-pro.online.net';
             $dbname = 'rgv1';
             $user = 'rgv1';
