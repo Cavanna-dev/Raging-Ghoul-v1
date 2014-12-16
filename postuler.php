@@ -4,17 +4,16 @@
         <meta charset="UTF-8">
         <title>Raging Ghoul</title>
         <!-- http://bootswatch.com/slate/ -->
-        <link rel="stylesheet" href="http://bootswatch.com/slate/bootstrap.min.css" type="text/css" media="screen" />
-        <link rel="stylesheet" href="./css/main.css" type="text/css" />
+        <?php include_once './cssFiles.php'; ?>
     </head>
     <body>
-        <div id="megaBan"></div>
         <div id="bodybg">
             <div  class="container">
                 <?php include 'menu.php'; ?>
+                <div id="megaBan"></div>
             </div>
             <div class="container">
-                <div id="bodycontent" class="jumbotron">
+                <div id="bodycontent" class="jumbotron charte">
                     <h1>Inscription</h1>
                     <form class="form-horizontal" action="./candidature.php" method="POST">
                         <fieldset>

@@ -6,8 +6,8 @@ $class_foreach = $db->query("SELECT id, name, color "
 $class_foreach->setFetchMode(PDO::FETCH_OBJ);
 while ($class = $class_foreach->fetch()) {
     ?>
-    <div class="col-md-7" style="color:<?php echo $class->color; ?>"><?php echo utf8_encode($class->name); ?></div>
-    <div class = "col-md-5">
+    <div class="col-md-6" style="color:<?php echo $class->color; ?>"><?php echo utf8_encode($class->name); ?></div>
+    <div class = "col-md-6">
         <?php
         try {
             $spe_foreach = $db->query("SELECT name, logo, isRecruitable, fk_class "

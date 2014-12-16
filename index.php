@@ -3,39 +3,20 @@
     <head>
         <meta charset="UTF-8">
         <title>Raging Ghoul</title>
-        <!-- http://bootswatch.com/slate/ -->
-        <link rel="stylesheet" href="http://bootswatch.com/slate/bootstrap.min.css" type="text/css" media="screen" />
-        <link rel="stylesheet" href="./css/main.css" type="text/css" />
+        <?php include_once './cssFiles.php'; ?>
     </head>
     <body>
         <div id="bodybg">
-            <div  class="container">
-                <?php include 'menu.php'; ?>
-            <div id="megaBan"></div>
-            </div>
+            <?php include 'menu.php'; ?>
             <div class="container">
-                <div class="row-fluid">
-                    <div class="col-md-4">
-                        <h3>Recrutement</h3>
-                        <?php include_once './recruit.php'; ?>
-                    </div>
-                    <div class="col-md-8">
-                        <blockquote>
-                            <h2>Titre Article 1</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                            <small>Par <span style="color:purple;">@auteur</span> publié le <cite title="Source Title">01/12/2014</cite></small>
-                        </blockquote>
-                        <blockquote class="pull-right">
-                            <h2>Titre Article 2</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                            <small class="text-right">Par <span style="color:purple;">@auteur</span> publié le <cite title="Source Title">01/12/2014</cite></small>
-                        </blockquote>
-                    </div>
+                <div class="jumbotron charte" style="margin-top: 30px;min-height: 800px;">
+                    <h1>Bienvenue</h1>
+                    <p>Le site est actuellement en developpement.</p>
+                    <p><a href="./postuler.php" class="btn btn-primary btn-lg">Vous pouvez quand même postuler</a></p>
+                    <p><a href="./forum/"class="btn btn-primary btn-lg">Ou visitez notre forum</a></p>
                 </div>
             </div>
-            <div class="container">
-                <div class="panel-footer">Panel footer</div>
-            </div>
+            <?php include_once './footer.php'; ?>
         </div>
     </body>
 </html>
