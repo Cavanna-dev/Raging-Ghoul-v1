@@ -8,10 +8,8 @@
     </head>
     <body>
         <div id="bodybg">
-            <div  class="container">
-                <?php include 'menu.php'; ?>
-                <div id="megaBan"></div>
-            </div>
+            <?php include 'menu.php'; ?>
+            <div id="megaBan"></div>
             <div class="container">
                 <div id="bodycontent" class="jumbotron charte">
                     <h1>Inscription</h1>
@@ -178,8 +176,8 @@
                         </fieldset>
                     </form>
                 </div>
-                <div class="panel-footer">Panel footer</div>
             </div>
+            <?php include_once './footer.php'; ?>
         </div>
     </body>
 </html>
