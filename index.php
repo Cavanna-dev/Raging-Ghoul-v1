@@ -12,8 +12,7 @@
                 <div class="jumbotron charte" style="margin-top: 30px;min-height: 800px;">
                     <h1>Bienvenue</h1>
                     <p>Le site est actuellement en developpement.</p>
-                    <p><a href="./postuler.php" class="btn btn-primary btn-lg">Vous pouvez quand même postuler</a></p>
-                    <p><a href="./forum/"class="btn btn-primary btn-lg">Ou visitez notre forum</a></p>
+                    <p><a href="./forum/"class="btn btn-primary btn-lg">Vous pouvez néanmoins visitez notre forum !</a></p>
                 </div>
             </div>
             <?php include_once './footer.php'; ?>

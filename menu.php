@@ -9,9 +9,9 @@ $menuLeft = array(
 );
 ?>
 <div  class="container">
-    <div class="navbar navbar-default charte" style="margin:0">
+    <div class="navbar navbar-inverse" style="margin:0;">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -26,10 +26,7 @@ $menuLeft = array(
                     </li>
                 <?php } ?>
             </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li><a href="./postuler.php">Postuler</a></li>
-                </li>
-            </ul>
         </div>
     </div>
+    <div id="megaBan"><img src="img/bg.jpg"/></div>
 </div>

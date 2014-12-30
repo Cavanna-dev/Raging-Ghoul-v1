@@ -16,19 +16,18 @@ body {
 
 .charte {
     border: 1px solid rgb(83, 89, 102);
-    background: rgb(78, 79, 95);
-    color: rgb(223, 213, 213);
+    background: rgb(255, 255, 255);
+    color: #323236;
 }
 
 #bodybg {
     background-size: 180px;
-    background: rgb(116, 46, 46);
+    background: #323236;
 }
 
-#megaBan {
-    height: 250px;
-    //background-image: url(../img/bg.jpg);
-    background-size: cover;
+#megaBan img{
+    height: 500px;
+    width:100%;
 }
 
 .recruitImg {
