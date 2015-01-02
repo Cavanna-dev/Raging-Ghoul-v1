@@ -1,6 +1,7 @@
 <?php
+error_reporting(E_ALL & ~E_NOTICE);
 session_start();
-if ($_SESSION['login'] == 'admin')
+if (!empty($_SESSION['login']))
     header('location:recruit.php');
 else {
     ?>
