@@ -19,7 +19,7 @@ try {
     {
         session_start();
         $_SESSION['login'] = $admin_login;
-        header('location:candidatures.php');
+        header('location:classes.php');
     }else
         header('location:error.php');
 
