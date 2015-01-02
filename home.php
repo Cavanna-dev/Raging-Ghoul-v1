@@ -18,40 +18,7 @@
                         </div>
                         <div id="progress" class="col-md-12 charte">
                             <h3>Avancée PvE</h3>
-                            <img class="col-md-12" src="img/cognefort.jpg"/>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th style="color:#93C54B;">Cognefort - Boss</th>
-                                        <th style="color:#93C54B;">HM</th>
-                                        <th style="color:#93C54B;">MC</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Kargath Lamepoing</td>
-                                        <td><img src="img/tick.png"/></td>
-                                        <td><img src="img/cross.png"/></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <img style="margin-top:15px;" class="col-md-12" src="img/fonderie.jpg"/>
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th style="color:#93C54B;">Fonderie - Boss</th>
-                                        <th style="color:#93C54B;">HM</th>
-                                        <th style="color:#93C54B;">MC</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Gruul</td>
-                                        <td><img src="img/cross.png"/></td>
-                                        <td><img src="img/cross.png"/></td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                            <?php include_once './progress.php'; ?>
                         </div>
                     </div>
                     <div id="news" class="col-md-9 charte">

@@ -2,7 +2,8 @@
 //Début Traitement du menu
 
 $menuLeft = array(
-    'Recrutement' => './classes.php',
+    'Recrutement' => './recruit.php',
+    'Progress' => './progress.php',
 );
 ?>
 <div  class="container">
@@ -13,7 +14,7 @@ $menuLeft = array(
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="./index.php">Raging Ghoul</a>
+            <a class="navbar-brand" href="../index.php">Raging Ghoul</a>
         </div>
         <div class="navbar-collapse collapse navbar-responsive-collapse">
             <ul class="nav navbar-nav">

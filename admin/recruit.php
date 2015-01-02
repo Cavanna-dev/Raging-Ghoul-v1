@@ -1,10 +1,10 @@
-<!DOCTYPE html>
 <?php
 session_start();
 if ($_SESSION['login'] != 'admin')
     header('location:error.php');
 else {
     ?>
+    <!DOCTYPE html>
     <html>
         <head>
             <meta charset="UTF-8">
@@ -25,11 +25,11 @@ else {
                             $resultats->setFetchMode(PDO::FETCH_OBJ);
                             while ($resultat = $resultats->fetch()) {
                                 ?>
-                                <li <?php 
-                                if ($_GET["tab"] == $resultat->id) 
-                                    echo 'class="active"'; 
-                                elseif($_GET["tab"] == "" && $resultat->id == 1)
-                                    echo 'class="active"'; 
+                                <li <?php
+                                if ($_GET["tab"] == $resultat->id)
+                                    echo 'class="active"';
+                                elseif ($_GET["tab"] == "" && $resultat->id == 1)
+                                    echo 'class="active"';
                                 ?>>
                                     <a href="#class<?php echo $resultat->id; ?>" 
                                        data-toggle="tab" <?php if ($resultat->id == 1) echo 'aria-expanded="true"'; ?>>
@@ -53,7 +53,7 @@ else {
                                 <?php
                                 if ($_GET["tab"] == $resultat->id) {
                                     echo "active in";
-                                } elseif ($_GET["tab"] == "" && $resultat->id == 1){
+                                } elseif ($_GET["tab"] == "" && $resultat->id == 1) {
                                     echo "pouet active in";
                                 }
                                 ?>" id="class<?php echo $resultat->id; ?>">
@@ -88,20 +88,18 @@ else {
                                                         ?>
                                                     </td>
                                                 </tr>
-        <?php } ?>
+                                            <?php } ?>
                                         </tbody>
                                     </table> 
                                 </div>
-    <?php } ?>
+                            <?php } ?>
                         </div>
 
                     </div>
                     <div class="panel-footer">Raging Ghoul Copyright - All Rights Reserved</div>
                 </div>
             </div>
-            <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
-            <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+            <?php include './bootstrapJs.php'; ?>
         </body>
     </html>
 <?php } ?>

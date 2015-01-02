@@ -8,7 +8,7 @@ $tab = htmlspecialchars($_GET["tab"]);
 
 try {
     $db->exec("UPDATE specialisations SET isRecruitable = '" . $recruit . "' WHERE id = '".$id."' ");
-    header('location:classes.php?tab='.$tab);
+    header('location:recruit.php?tab='.$tab);
 } catch (PDOException $e) {
     header('location:error.php');
 }
