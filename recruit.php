@@ -25,7 +25,7 @@ define("MAX_LENGHT_CLASS_NAME", 10);
             ?>
 
             <tr>
-                <td class="col-md-6" style="color:<?php echo $class->color; ?>"><?php echo $nameClass; ?></td>
+                <td class="col-md-6" style="font-weight: bold;"><?php echo $nameClass; ?></td>
                 <td class="col-md-6"><?php
                     try {
                         $spe_foreach = $db->query("SELECT name, logo, isRecruitable, fk_class "
