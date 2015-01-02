@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Raging Ghoul</title>
-        <!-- http://bootswatch.com/slate/ -->
+        <!-- http://bootswatch.com/sandstone/ -->
         <?php include_once './cssFiles.php'; ?>
     </head>
     <body>
@@ -58,7 +58,7 @@
                         <blockquote>
                             <h2>Nouveau Site !</h2>
                             <img src="img/cognefort.jpg" width="100%"/>
-                            <p>C'est avec plaisir que je vous annonce que le site de la guilde Raging Ghoul est à présent terminé !.</p>
+                            <p>C'est avec plaisir que je vous annonce que le site de la guilde Raging Ghoul est à présent terminé !</p>
                             <small>Par <span style="color:#93C54B;">@Swoka</span> publié le <cite title="Source Title">30/12/2014</cite></small>
                         </blockquote>
                         <blockquote class="pull-right">

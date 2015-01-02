@@ -3,22 +3,10 @@
     <head>
         <meta charset="UTF-8">
         <title>Raging Ghoul</title>
-        <link rel="stylesheet" href="http://bootswatch.com/darkly/bootstrap.min.css" type="text/css" media="screen" />
-        <link rel="stylesheet" href="../css/main.css" type="text/css" />
+        <?php include_once './cssFiles.php'; ?>
     </head>
     <body>
-        <div class="navbar navbar-default" style="margin:0">
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Raging Ghoul - BO</a>
-                </div>
-            </div>
-        </div>
+        <?php include './menu.php'; ?>
         <div id="bodybg">
             <div class="container">
                 <div id="bodycontent" class="jumbotron">

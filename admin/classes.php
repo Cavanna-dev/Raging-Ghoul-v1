@@ -9,86 +9,99 @@ else {
         <head>
             <meta charset="UTF-8">
             <title>Raging Ghoul</title>
-            <link rel="stylesheet" href="http://bootswatch.com/darkly/bootstrap.min.css" type="text/css" media="screen" />
-            <link rel="stylesheet" href="../css/main.css" type="text/css" />
+            <?php include_once './cssFiles.php'; ?>
         </head>
         <body>
-            <div class="navbar navbar-default" style="margin:0">
-                <div class="container">
-                    <div class="navbar-header">
-                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                            <span class="icon-bar"></span>
-                        </button>
-                        <a class="navbar-brand" href="./candidatures.php">Raging Ghoul - BO</a>
-                    </div>
-                    <div class="navbar-collapse collapse navbar-responsive-collapse">
-                        <ul class="nav navbar-nav">
-                            <li><a href="./candidatures.php">Les Candidatures</a></li>
-                        </ul>
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="./classes.php">Gérer les classes</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <?php include './menu.php'; ?>
             <div id="bodybg">
                 <div class="container">
                     <div id="bodycontent" class="jumbotron">
-                        <h1>Liste des Classes : </h1>
-                        <form action="" method="POST">
-                            <table class="table table-striped table-hover ">
-                                <thead>
-                                    <tr>
-                                        <th>Classe</th>
-                                        <th>Logo</th>
-                                        <th>Couleur</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                    include_once '../connectionDb.php';
+                        <h2>Liste des Recrutements : </h2>
+                        <ul class="nav nav-tabs">
+                            <?php include '../connectionDb.php'; ?>
+                            <?php
+                            $resultats = $db->query("SELECT id, name, color, logo "
+                                    . "FROM classes ");
+                            $resultats->setFetchMode(PDO::FETCH_OBJ);
+                            while ($resultat = $resultats->fetch()) {
+                                ?>
+                                <li <?php 
+                                if ($_GET["tab"] == $resultat->id) 
+                                    echo 'class="active"'; 
+                                elseif($_GET["tab"] == "" && $resultat->id == 1)
+                                    echo 'class="active"'; 
+                                ?>>
+                                    <a href="#class<?php echo $resultat->id; ?>" 
+                                       data-toggle="tab" <?php if ($resultat->id == 1) echo 'aria-expanded="true"'; ?>>
+                                        <img src="../img/classes/<?php echo $resultat->logo; ?>" width="35" height="35"/>
+                                    </a>
+                                </li>
 
-                                    $resultats = $db->query("SELECT * "
-                                            . "FROM classes ");
-                                    $resultats->setFetchMode(PDO::FETCH_OBJ);
-                                    while ($resultat = $resultats->fetch()) {
-                                        echo '<tr style="color:' . $resultat->color . '">';
-                                        echo '<td>' . utf8_encode($resultat->name) . '</td>';
-                                        echo '<td><img style="width:20px;height:20px;" src="../img/classes/' . $resultat->logo . '"/></td>';
-                                        echo '<td><span class="color" style="display:;">' . $resultat->color . '</span><input class="editColor" type="text" style="display:none;" /></td>';
-                                        echo '<td><a class="update" href="#" style="display:;">Modifier</a><a class="save" href="#" style="display:none;">Enregistrer</a></td>';
-                                        echo '<tr>';
-                                    }
-                                    $resultats->closeCursor();
+                                <?php
+                            }
+                            $resultats->closeCursor();
+                            ?>
+                        </ul>
+                        <div id="myTabContent" class="tab-content">
+                            <?php
+                            $resultats = $db->query("SELECT id, name, color "
+                                    . "FROM classes ");
+                            $resultats->setFetchMode(PDO::FETCH_OBJ);
+                            while ($resultat = $resultats->fetch()) {
+                                ?>
+                                <div class="tab-pane fade 
+                                <?php
+                                if ($_GET["tab"] == $resultat->id) {
+                                    echo "active in";
+                                } elseif ($_GET["tab"] == "" && $resultat->id == 1){
+                                    echo "pouet active in";
+                                }
+                                ?>" id="class<?php echo $resultat->id; ?>">
+                                    <h3 style="color:<?php echo $resultat->color; ?>"><?php echo $resultat->name; ?></h3>
+                                    <?php
+                                    $resultats_spe = $db->query("SELECT id, name, logo, isRecruitable, fk_class "
+                                            . "FROM specialisations "
+                                            . "WHERE fk_class = '" . $resultat->id . "'");
+                                    $resultats_spe->setFetchMode(PDO::FETCH_OBJ);
                                     ?>
-                                <div id="colorSelector"><div style="background-color: rgb(92, 92, 168);"></div></div>
-                                </tbody>
-                            </table>
-                        </form>
+                                    <table class="table table-striped table-hover ">
+                                        <thead>
+                                            <tr>
+                                                <th>Logo</th>
+                                                <th>Spécialisation</th>
+                                                <th>Recrutement</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <?php
+                                            while ($resultat_spe = $resultats_spe->fetch()) {
+                                                ?>
+                                                <tr>
+                                                    <td><img src="<?php echo $resultat_spe->logo; ?>" width="35" height="35"/></td>
+                                                    <td><?php echo $resultat_spe->name; ?></td>
+                                                    <td>
+                                                        <?php
+                                                        if ($resultat_spe->isRecruitable == 1)
+                                                            echo '<a href="./updateRecruit.php?id=' . $resultat_spe->id . '&recruit=0&tab=' . $resultat->id . '" onclick="return confirm(\'Etes-vous sur de vouloir fermer le recrutement pour la spécialisation ' . $resultat_spe->name . '?\')"><img src="../img/tick.png"/></a>';
+                                                        else
+                                                            echo '<a href="./updateRecruit.php?id=' . $resultat_spe->id . '&recruit=1&tab=' . $resultat->id . '" onclick="return confirm(\'Etes-vous sur de vouloir ouvrir le recrutement pour la spécialisation ' . $resultat_spe->name . '?\')"><img src="../img/cross.png"/></a>';
+                                                        ?>
+                                                    </td>
+                                                </tr>
+        <?php } ?>
+                                        </tbody>
+                                    </table> 
+                                </div>
+    <?php } ?>
+                        </div>
+
                     </div>
                     <div class="panel-footer">Raging Ghoul Copyright - All Rights Reserved</div>
                 </div>
             </div>
-            <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-            <script>
-                $('.update').click(function () {
-                    var line = $(this).parent('td');
-                    line.find('.update').css("display", "none");
-                    line.find('.save').css("display", "");
-                    line.parent('tr').find('.color').css("display", "none");
-                    line.parent('tr').find('.editColor').css("display", "");
-                });
-                $('.save').click(function () {
-                    var line = $(this).parent('td');
-                    line.find('.update').css("display", "");
-                    line.find('.save').css("display", "none");
-                    line.parent('tr').find('.color').css("display", "");
-                    line.parent('tr').find('.editColor').css("display", "none");
-                });
-            </script>
+            <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+            <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
         </body>
     </html>
 <?php } ?>
