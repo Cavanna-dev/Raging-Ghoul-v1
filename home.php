@@ -10,6 +10,7 @@
         <div id="bodybg">
             <?php include 'menu.php'; ?>
             <div class="container">
+            <div id="megaBan"><img src="img/bg.jpg"/></div>
                 <div class="row-fluid">
                     <div id="leftBlock" class="col-md-3">
                         <div id="recruitment" class="col-md-12 charte">
@@ -49,7 +50,7 @@
                         }
                         if ($count == 1) {
                             ?>
-                        <p>Aucune News pour le moment.</p>
+                            <p>Aucune News pour le moment.</p>
                         <?php } ?>
                     </div>
                 </div>

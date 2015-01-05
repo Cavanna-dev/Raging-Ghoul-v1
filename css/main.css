@@ -7,13 +7,10 @@
 h1, h2, h3, h4 {
     font-weight: bold;
 }
-
-body {
-    height:100%;
-    //background-image: url(../img/background.jpg);
-
+html, body
+{
+    height: 100%;
 }
-
 .charte {
     border: 1px solid rgb(83, 89, 102);
     background: rgb(255, 255, 255);
@@ -22,7 +19,7 @@ body {
 
 #bodybg {
     background-size: 180px;
-    background: #323236;
+    //background: #323236;
 }
 
 #megaBan img{
@@ -66,4 +63,47 @@ body {
 
 #footer {
     margin-top:15px;
+}
+
+.rosterVignettes {
+    background-color: rgba(55, 90, 127, 0.4);
+    border:1px solid rgba(55, 90, 127, 0.4);
+    padding:3px;
+    opacity: 0.7;
+    width: 100%;
+    margin-bottom: 5px; 
+}
+
+.rosterVignettes:hover {
+    background-color: rgba(55, 90, 127, 1);
+    border:1px solid rgba(55, 90, 127, 1);
+    padding:3px;
+    opacity: 0.7;
+    width: 100%;
+}
+
+.rosterVignettes a {
+    text-decoration: none;
+    display:block;
+}
+
+.homeRosterVignettes{
+    background-color: rgba(147, 197, 75, 0.6);
+    border:1px solid rgba(147, 197, 75, 0.6);
+    padding:3px;
+    width: 100%;
+    margin-bottom: 5px; 
+}
+
+.homeRosterVignettes:hover {
+    background-color: rgba(147, 197, 75, 1);
+    border:1px solid rgba(147, 197, 75, 1);
+    padding:3px;
+    width: 100%;
+}
+
+.homeRosterVignettes a {
+    opacity:1;
+    text-decoration: none;
+    display:block;
 }

@@ -4,7 +4,7 @@
 $menuLeft = array(
     'Accueil' => './index.php',
     'Forum' => './forum/',
-    'Roster' => '#',
+    'Roster' => './roster.php',
     'Vidéo' => '#',
 );
 ?>
@@ -28,5 +28,4 @@ $menuLeft = array(
             </ul>
         </div>
     </div>
-    <div id="megaBan"><img src="img/bg.jpg"/></div>
 </div>

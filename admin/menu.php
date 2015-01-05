@@ -5,6 +5,7 @@ $menuLeft = array(
     'News'        => './news.php',
     'Recrutement' => './recruit.php',
     'Progress'    => './progress.php',
+    'Roster'      => './roster.php',
 );
 ?>
 <div  class="container">
