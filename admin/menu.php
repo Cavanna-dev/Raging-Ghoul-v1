@@ -2,8 +2,9 @@
 //Début Traitement du menu
 
 $menuLeft = array(
+    'News'        => './news.php',
     'Recrutement' => './recruit.php',
-    'Progress' => './progress.php',
+    'Progress'    => './progress.php',
 );
 ?>
 <div  class="container">
