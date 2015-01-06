@@ -148,7 +148,8 @@ else {
                             <option>Choississez</option>
                             <?php
                             $membres = $db->query("SELECT id, pseudo "
-                                    . "FROM roster ");
+                                    . "FROM roster "
+                                    . "ORDER BY pseudo");
                             $membres->setFetchMode(PDO::FETCH_OBJ);
                             while ($membre = $membres->fetch()) {
                                 ?>

@@ -9,8 +9,8 @@ define("MAX_LENGHT_CLASS_NAME", 10);
 <table class="table">
     <thead>
         <tr>
-            <th style="color:#93C54B;">Classe</th>
-            <th style="color:#93C54B;">Spécialité</th>
+            <th>Classe</th>
+            <th>Spécialité</th>
         </tr>
     </thead>
     <tbody>

@@ -7,21 +7,19 @@ $menuLeft = array(
     'Roster' => './roster.php',
     'Vidéo' => '#',
 );
+
 ?>
+<div id="megaBan">
+    <div class="container">
+        <h1 style="color:#B54743;">Raging Ghoul</h1>
+    </div>
+</div>
 <div  class="container">
-    <div class="navbar navbar-inverse" style="margin:0;">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="./index.php">Raging Ghoul</a>
-        </div>
+    <div class="navbar navbar-default" style="margin:0;">
         <div class="navbar-collapse collapse navbar-responsive-collapse">
             <ul class="nav navbar-nav">
                 <?php foreach ($menuLeft as $elementNameMenu => $elementUrlMenu) { ?>
-                    <li class="<?php if (str_replace("/", "", $_SERVER['SERVER_NAME']) == $elementUrlMenu) echo "active"; ?>">
+                    <li class="<?php if (str_replace("/", "", $_SERVER['PHP_SELF']) == str_replace("./", "", $elementUrlMenu)) echo "active"; ?>">
                         <a href="<?php echo $elementUrlMenu; ?>"><?php echo $elementNameMenu; ?></a>
                     </li>
                 <?php } ?>

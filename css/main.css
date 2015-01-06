@@ -22,9 +22,10 @@ html, body
     //background: #323236;
 }
 
-#megaBan img{
-    height: 500px;
+#megaBan{
+    height: 200px;
     width:100%;
+    background-color: rgba(58, 78, 97, 0.66);
 }
 
 .recruitImg {
@@ -106,4 +107,11 @@ html, body
     opacity:1;
     text-decoration: none;
     display:block;
+}
+.rosterMember {
+    font-size: 1.1em;
+    text-shadow: 1px 1px 1px #260009;
+}
+table thead th{
+    color:#B54743;
 }

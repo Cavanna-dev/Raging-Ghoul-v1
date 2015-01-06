@@ -12,9 +12,9 @@ try {
         <table class="table">
             <thead>
                 <tr>
-                    <th style="color:#93C54B;"><?php echo $raid->name; ?> - Boss</th>
-                    <th style="color:#93C54B;">HM</th>
-                    <th style="color:#93C54B;">MC</th>
+                    <th><?php echo $raid->name; ?> - Boss</th>
+                    <th>HM</th>
+                    <th>MC</th>
                 </tr>
             </thead>
             <tbody>
