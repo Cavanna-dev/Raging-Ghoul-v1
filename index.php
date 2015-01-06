@@ -41,7 +41,7 @@
                                     echo "123%";
                                 ?>"/>
                                      <?php echo $new->content; ?>
-                                <small>Par <span style="color:#93C54B;">@<?php echo $new->auteur; ?></span> publié le <cite title="<?php echo $new->title; ?>"><?php echo $new->date; ?></cite></small>
+                                <small>Par <span style="color:#B54743;">@<?php echo $new->auteur; ?></span> publié le <cite title="<?php echo $new->title; ?>"><?php echo $new->date; ?></cite></small>
                             </blockquote>
                             <?php /* <hr style="background-color: black;width:100%;border-bottom: 1px solid;margin-bottom: 0;"> */ ?>
                             <?php

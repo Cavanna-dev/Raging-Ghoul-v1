@@ -142,7 +142,6 @@ else {
                             </div>
                         </div>
 
-
                         <h2>Supprimer un membre* : </h2>
                         <select style="color:black;" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
                             <option>Choississez</option>
@@ -153,7 +152,7 @@ else {
                             $membres->setFetchMode(PDO::FETCH_OBJ);
                             while ($membre = $membres->fetch()) {
                                 ?>
-                                <option value="./delRoster.php?salop=<?php echo $membre->id; ?>" ><?php echo $membre->pseudo;?></option>
+                                <option value="./delRoster.php?salop=<?php echo $membre->id; ?>" ><?php echo $membre->pseudo; ?></option>
                             <?php } ?>
                         </select>
                         <p><small>*Au changement de la case, le joueur sera supprimé du roster.</small></p>
